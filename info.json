@@ -1,0 +1,21 @@
+{
+    "display_name": {
+        "en": "Melipayamak SMS Gateway",
+        "fa": "درگاه پیام کوتاه ملی پیامک"
+    },
+    "description": {
+        "en": "Quick and easy SMS sending.",
+        "fa": "ارسال پیام کوتاه سریع و آسان"
+    },
+    "authors": [
+        {
+            "name": "Weska.ir",
+            "url": "https://weska.ir"
+        }
+    ],
+    "version": "1.0",
+    "github": "https://github.com/weska-ir/melipayamak-sms-gateway",
+    "settings": {
+        "show": true
+    }
+}

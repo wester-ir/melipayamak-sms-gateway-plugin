@@ -31,6 +31,9 @@ PluginRepository::singleton()->addAction(
 );
 
 if (request()->routeIs('admin.plugins.plugin.settings.*')) {
+    // Add translations
+    Lang::addNamespace('MelipayamakSMSGateway', realpath( __DIR__ .'/lang/'));
+
     // Validation Rules
     PluginRepository::singleton()->addAction(
         hookName: "plugin[{$plugin->name}]__settings__validation_rules",

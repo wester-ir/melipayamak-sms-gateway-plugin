@@ -8,7 +8,6 @@ use App\Enums\DataTypeEnum;
 use App\Http\Requests\Admin\UpdatePluginSettingsRequest;
 use App\Models\Option;
 use App\Models\Plugin;
-use App\Repositories\PluginRepository;
 use Illuminate\Support\Facades\DB;
 
 $options = [
@@ -23,7 +22,7 @@ $options = [
 ];
 
 // Setting Options
-PluginRepository::singleton()->addAction(
+pluginRepository()->addAction(
     hookName: "plugin[{$plugin->name}]__settings__options",
     callback: function () use ($plugin, $options) {
         return Option::where('prefix', $plugin->name)->whereIn('name', $options)->get();
@@ -35,7 +34,7 @@ if (request()->routeIs('admin.plugins.plugin.settings.*')) {
     Lang::addNamespace('MelipayamakSMSGateway', realpath( __DIR__ .'/lang/'));
 
     // Validation Rules
-    PluginRepository::singleton()->addAction(
+    pluginRepository()->addAction(
         hookName: "plugin[{$plugin->name}]__settings__validation_rules",
         callback: function () {
             return [
@@ -52,7 +51,7 @@ if (request()->routeIs('admin.plugins.plugin.settings.*')) {
     );
 
     // Update
-    PluginRepository::singleton()->addAction(
+    pluginRepository()->addAction(
         hookName: "plugin[{$plugin->name}]__settings__update",
         callback: function (UpdatePluginSettingsRequest $request, Plugin $plugin) use ($options) {
             $arr = array_map(function ($option) use ($request, $plugin) {

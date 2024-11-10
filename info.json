@@ -14,7 +14,7 @@
             "url": "https://weska.ir"
         }
     ],
-    "version": "1.00",
+    "version": "1.0.0",
     "github": "https://github.com/weska-ir/melipayamak-sms-gateway",
     "settings": {
         "show": true

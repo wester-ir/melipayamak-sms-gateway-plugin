@@ -15,7 +15,7 @@
         }
     ],
     "logo": "logo.svg",
-    "version": "1.0.3",
+    "version": "1.0.5",
     "github": "https://github.com/weska-ir/melipayamak-sms-gateway-plugin",
     "settings": {
         "show": true

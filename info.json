@@ -10,13 +10,13 @@
     },
     "authors": [
         {
-            "name": "Weska.ir",
-            "url": "https://weska.ir"
+            "name": "Wester.ir",
+            "url": "https://wester.ir"
         }
     ],
     "logo": "logo.svg",
     "version": "1.0.5",
-    "github": "https://github.com/weska-ir/melipayamak-sms-gateway-plugin",
+    "github": "https://github.com/wester-ir/melipayamak-sms-gateway-plugin",
     "settings": {
         "show": true
     }

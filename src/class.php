@@ -77,9 +77,9 @@ class WK_MELIPAYAMAK_SMS_GATEWAY implements SMSGatewayInterface
         $this->username = $options->get('username');
         $this->password = $options->get('password');
         $this->number = $options->get('number');
-        $this->verificationPatternId = $options->get('verification_pattern_id');
-        $this->orderPaidPatternId = $options->get('order_paid_pattern_id');
-        $this->orderShippedPatternId = $options->get('order_shipped_pattern_id');
+        $this->verificationPatternId = (int) $options->get('verification_pattern_id');
+        $this->orderPaidPatternId = (int) $options->get('order_paid_pattern_id');
+        $this->orderShippedPatternId = (int) $options->get('order_shipped_pattern_id');
         $this->orderPaidPatternArgs = $options->get('order_paid_pattern_args');
         $this->orderShippedPatternArgs = $options->get('order_shipped_pattern_args');
     }

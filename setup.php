@@ -18,9 +18,9 @@ class PluginSetup extends BasePluginSetup
             'number'   => '',
             'verification_pattern_id'    => '',
             'order_paid_pattern_id'      => '',
-            'order_shipped_pattern_id'   => '',
+            'order_fulfilled_pattern_id'   => '',
             'order_paid_pattern_args'    => '',
-            'order_shipped_pattern_args' => '',
+            'order_fulfilled_pattern_args' => '',
         ];
 
         $prefix = $this->plugin->name;

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 
 class WK_MELIPAYAMAK_SMS_GATEWAY implements SMSGatewayInterface
 {
-    public const NAME = 'Meli Payamak';
+    public const NAME = 'MeliPayamak';
     private const REGULAR_ENDPOINT = 'https://rest.payamak-panel.com/api/SendSMS/SendSMS';
     private const PATTERN_ENDPOINT = 'https://rest.payamak-panel.com/api/SendSMS/BaseServiceNumber';
 

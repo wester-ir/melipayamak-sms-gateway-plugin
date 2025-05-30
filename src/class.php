@@ -46,11 +46,11 @@ class WK_MELIPAYAMAK_SMS_GATEWAY implements SMSGatewayInterface
     private string $orderPaidPatternId;
 
     /**
-     * The order shipped pattern id.
+     * The order fulfilled pattern id.
      * 
      * @var string
      */
-    private string $orderShippedPatternId;
+    private string $orderFulfilledPatternId;
 
     /**
      * The arguments for the order paid pattern.
@@ -60,11 +60,11 @@ class WK_MELIPAYAMAK_SMS_GATEWAY implements SMSGatewayInterface
     private string $orderPaidPatternArgs;
 
     /**
-     * The arguments for the order shipped pattern.
+     * The arguments for the order fulfilled pattern.
      * 
      * @var string
      */
-    private string $orderShippedPatternArgs;
+    private string $orderFulfilledPatternArgs;
 
     /**
      * Create a new instance.
@@ -79,9 +79,9 @@ class WK_MELIPAYAMAK_SMS_GATEWAY implements SMSGatewayInterface
         $this->number = $options->get('number');
         $this->verificationPatternId = (int) $options->get('verification_pattern_id');
         $this->orderPaidPatternId = (int) $options->get('order_paid_pattern_id');
-        $this->orderShippedPatternId = (int) $options->get('order_shipped_pattern_id');
+        $this->orderFulfilledPatternId = (int) $options->get('order_fulfilled_pattern_id');
         $this->orderPaidPatternArgs = $options->get('order_paid_pattern_args');
-        $this->orderShippedPatternArgs = $options->get('order_shipped_pattern_args');
+        $this->orderFulfilledPatternArgs = $options->get('order_fulfilled_pattern_args');
     }
 
     /**
@@ -178,15 +178,15 @@ class WK_MELIPAYAMAK_SMS_GATEWAY implements SMSGatewayInterface
     }
 
     /**
-     * Send a "order shipped" message.
+     * Send a "order fulfilled" message.
      * 
      * @param  \App\Models\Order  $order
      * @return array|null
      */
-    public function sendOrderShippedMessage(Order $order): ?array
+    public function sendOrderFulfilledMessage(Order $order): ?array
     {
-        $patternId = $this->orderShippedPatternId;
-        $patternArgs = $this->orderShippedPatternArgs;
+        $patternId = $this->orderFulfilledPatternId;
+        $patternArgs = $this->orderFulfilledPatternArgs;
 
         if (! $patternId || ! $patternArgs) {
             return null;

@@ -16,9 +16,9 @@ $options = [
     'number',
     'verification_pattern_id',
     'order_paid_pattern_id',
-    'order_shipped_pattern_id',
+    'order_fulfilled_pattern_id',
     'order_paid_pattern_args',
-    'order_shipped_pattern_args',
+    'order_fulfilled_pattern_args',
 ];
 
 // Setting Options
@@ -43,9 +43,9 @@ if (request()->routeIs('admin.plugins.plugin.settings.*')) {
                 'number'   => ['required', 'string'],
                 'verification_pattern_id'    => ['required', 'string'],
                 'order_paid_pattern_id'      => ['required', 'string'],
-                'order_shipped_pattern_id'   => ['required', 'string'],
+                'order_fulfilled_pattern_id'   => ['required', 'string'],
                 'order_paid_pattern_args'    => ['required', 'string'],
-                'order_shipped_pattern_args' => ['required', 'string'],
+                'order_fulfilled_pattern_args' => ['required', 'string'],
             ];
         }
     );

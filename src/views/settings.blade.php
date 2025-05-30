@@ -44,10 +44,10 @@
                         <x-input-error :messages="$errors->get('order_paid_pattern_id')" class="mt-2" />
                     </div>
     
-                    <div class="form-control" data-danger="{{ as_string($errors->has('order_shipped_pattern_id')) }}">
-                        <label for="order_shipped_pattern_id" after="{{ __('Required') }}">{{ __('MelipayamakSMSGateway::attributes.order_shipped_pattern_id') }}</label>
-                        <input type="text" id="order_shipped_pattern_id" name="order_shipped_pattern_id" value="{{ old('order_shipped_pattern_id', $options->get('order_shipped_pattern_id')) }}" class="default ltr-direction">
-                        <x-input-error :messages="$errors->get('order_shipped_pattern_id')" class="mt-2" />
+                    <div class="form-control" data-danger="{{ as_string($errors->has('order_fulfilled_pattern_id')) }}">
+                        <label for="order_fulfilled_pattern_id" after="{{ __('Required') }}">{{ __('MelipayamakSMSGateway::attributes.order_fulfilled_pattern_id') }}</label>
+                        <input type="text" id="order_fulfilled_pattern_id" name="order_fulfilled_pattern_id" value="{{ old('order_fulfilled_pattern_id', $options->get('order_fulfilled_pattern_id')) }}" class="default ltr-direction">
+                        <x-input-error :messages="$errors->get('order_fulfilled_pattern_id')" class="mt-2" />
                     </div>
                 </div>
 
@@ -57,10 +57,10 @@
                     <x-input-error :messages="$errors->get('order_paid_pattern_args')" class="mt-2" />
                 </div>
 
-                <div class="form-control" data-danger="{{ as_string($errors->has('order_shipped_pattern_args')) }}">
-                    <label for="order_shipped_pattern_args" after="{{ __('Required') }}">{{ __('MelipayamakSMSGateway::attributes.order_shipped_pattern_args') }}</label>
-                    <input type="text" id="order_shipped_pattern_args" name="order_shipped_pattern_args" value="{{ old('order_shipped_pattern_args', $options->get('order_shipped_pattern_args')) }}" class="default ltr-direction">
-                    <x-input-error :messages="$errors->get('order_shipped_pattern_args')" class="mt-2" />
+                <div class="form-control" data-danger="{{ as_string($errors->has('order_fulfilled_pattern_args')) }}">
+                    <label for="order_fulfilled_pattern_args" after="{{ __('Required') }}">{{ __('MelipayamakSMSGateway::attributes.order_fulfilled_pattern_args') }}</label>
+                    <input type="text" id="order_fulfilled_pattern_args" name="order_fulfilled_pattern_args" value="{{ old('order_fulfilled_pattern_args', $options->get('order_fulfilled_pattern_args')) }}" class="default ltr-direction">
+                    <x-input-error :messages="$errors->get('order_fulfilled_pattern_args')" class="mt-2" />
                 </div>
             </div>
         </div>

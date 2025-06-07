@@ -71,7 +71,8 @@ class WK_MELIPAYAMAK_SMS_GATEWAY implements SMSGatewayInterface
      */
     public function __construct()
     {
-        $options = pluginRepository()->doAction('plugin[melipayamak-sms-gateway]__settings__options')->keyBy('name')
+        $options = trigger_plugin_action('plugin[melipayamak-sms-gateway]__settings__options')
+                    ->keyBy('name')
                     ->map(fn ($option) => $option->value);
 
         $this->username = $options->get('username');

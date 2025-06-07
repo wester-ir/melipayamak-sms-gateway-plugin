@@ -15,7 +15,7 @@
         }
     ],
     "logo": "logo.svg",
-    "version": "1.0.9",
+    "version": "1.1.0",
     "github": "https://github.com/wester-ir/melipayamak-sms-gateway-plugin",
     "settings": {
         "show": true

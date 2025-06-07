@@ -17,7 +17,7 @@ if (! class_exists('WK_MELIPAYAMAK_SMS_GATEWAY') && ! function_exists('WK_MELIPA
     }
 
     // Gateways
-    trigger_plugin_action(
+    register_plugin_action(
         hook: 'sms_gateways',
         callback: 'WK_MELIPAYAMAK_SMS_GATEWAY_INIT',
     );

@@ -22,8 +22,8 @@ $options = [
 ];
 
 // Setting Options
-pluginRepository()->addAction(
-    hookName: "plugin[{$plugin->name}]__settings__options",
+trigger_plugin_action(
+    hook: "plugin[{$plugin->name}]__settings__options",
     callback: function () use ($plugin, $options) {
         return Option::where('prefix', $plugin->name)->whereIn('name', $options)->get();
     }
@@ -34,8 +34,8 @@ if (request()->routeIs('admin.plugins.plugin.settings.*')) {
     Lang::addNamespace('MelipayamakSMSGateway', realpath( __DIR__ .'/lang/'));
 
     // Validation Rules
-    pluginRepository()->addAction(
-        hookName: "plugin[{$plugin->name}]__settings__validation_rules",
+    trigger_plugin_action(
+        hook: "plugin[{$plugin->name}]__settings__validation_rules",
         callback: function () {
             return [
                 'username' => ['required', 'string'],
@@ -51,8 +51,8 @@ if (request()->routeIs('admin.plugins.plugin.settings.*')) {
     );
 
     // Update
-    pluginRepository()->addAction(
-        hookName: "plugin[{$plugin->name}]__settings__update",
+    trigger_plugin_action(
+        hook: "plugin[{$plugin->name}]__settings__update",
         callback: function (UpdatePluginSettingsRequest $request, Plugin $plugin) use ($options) {
             $arr = array_map(function ($option) use ($request, $plugin) {
                 return [
